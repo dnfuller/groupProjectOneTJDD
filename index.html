@@ -36,48 +36,84 @@
                 </a>
             </div>
         </nav>
-
-
-        <ul id="slide-out" class="side-nav">
-            <li class="findDogLink link-size"><a href="#!">Find a Dog</a></li>
-            
-            <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
-                <li>
-                    <a class="collapsible-header link-size">Account<i class="mdi-navigation-arrow-drop-down"></i></a>
-                    <div class="collapsible-body">
-                    <ul class="left hide-on-med-and-down drop-down">
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1 link-size">My Account<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2 link-size">Account Settings<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                        <ul id='dropdown1' class='dropdown-content'>
-                            <li><a href="#!">My Account</a></li>
-                            <li><a href="#!">Account Settings</a></li>
-                        </ul>
-                    </ul>
-                    </div>
+    </header>
+    <div class="clearfix">
+        <div class="navContent">
+            <ul id="slide-out" class="side-nav">
+                <li class="findDogLink">
+                    <a href="#!">Find a Dog</a>
                 </li>
-                </ul>
-            </li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <a class="collapsible-header">Account
+                                <i class="mdi-navigation-arrow-drop-down"></i>
+                            </a>
+                            <div class="collapsible-body">
+                                <ul class="left hide-on-med-and-down drop-down">
+                                    <li>
+                                        <a class="dropdown-button" href="#!" data-activates="dropdown1">My Account
+                                            <i class="mdi-navigation-arrow-drop-down right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-button" href="#!" data-activates="dropdown2">Account Settings
+                                            <i class="mdi-navigation-arrow-drop-down right"></i>
+                                        </a>
+                                    </li>
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                        <li>
+                                            <a href="#!">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">Account Settings</a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse">
+                <i class="mdi-navigation-menu"></i>
+            </a>
+        </div>
 
+        <div class="mainContent">
+            <div>Main Content</div>
+        </div>
+    </div>
 
-    <br>
+    
+
     <!----footer-->
     <footer class="page-footer brown lighten-2">
         <div class="container brown lighten-1">
           <div class="row">
-            <div class="col l6 s12 brown lighten-1">
+            <div class="col l3 s12 brown lighten-1">
               <h5 class="black-text">DogTown</h5>
-              <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              <!-- <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
             </div>
-            <div class="col l4 offset-l2 s12 footer-menu">
+            <div class="col l3  s12 section1 footer-menu">
+                <ul>
+                    <li><a class="black-text text-lighten-3" href="#!">About Us</a></li>
+                    <li><a class="black-text text-lighten-3" href="#!">My Account</a></li>
+                    <li><a class="black-text text-lighten-3" href="#!">Account Settings</a></li>
+                </ul>  
+            </div>          
+            <div class="col l3  s12 section2 footer-menu">              
               <ul>
                 <li><a class="black-text text-lighten-3" href="#!">Login</a></li>
                 <li><a class="black-text text-lighten-3" href="#!">Sign Up</a></li>
                 <li><a class="black-text text-lighten-3" href="#!">Dog Search</a></li>
-                <li><a class="black-text text-lighten-4 right" href="#http://rmpuppyrescue.org/!">Adopt a Dog!</a></li>
               </ul>
+            </div>
+            <div class="col l3  s12 section3 footer-menu">
+                <ul>
+                    <li><a class="black-text text-lighten-3" href="#http://rmpuppyrescue.org/!">Adopt a Dog!</a></li>
+                </ul>
             </div>
           </div>
         </div>
