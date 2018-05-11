@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- linking firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/temp.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
     
 </head>
 <body>
@@ -25,8 +27,8 @@
             <div class="nav-wrapper brown lighten-2">
                 <a href="#!" class="brand-logo"><img class="responsive-img" src="assets/images/logo.png"></a>
                 <ul class="right hide-on-med-and-down top-nav">
-                <li><a>Sign In</a></li>
-                <li><a>Log In</a></li>
+                    <li><a class="navLinks">Sign In</a></li>
+                    <li><a class="navLinks">Log In</a></li>
                 </ul>
             </div>
             <div class="nav-content brown lighten-1">
@@ -48,37 +50,36 @@
         </ul>
     </header>
 
+    <br>
+
+    <div class="content">
+        <p>just some text to separate header and footer</p>
+
+    </div>
 
 
-
-
-
-
-
-
-
-
+    <br>
     <!----footer-->
-    <footer class="page-footer">
-        <div class="container">
+    <footer class="page-footer brown lighten-2">
+        <div class="container brown lighten-1">
           <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">DogTown</h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <div class="col l6 s12 brown lighten-1">
+              <h5 class="black-text">DogTown</h5>
+              <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
-            <div class="col l4 offset-l2 s12">
+            <div class="col l4 offset-l2 s12 footer-menu">
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Login</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Sign Up</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Dog Search</a></li>
-                <li><a class="grey-text text-lighten-4 right" href="#http://rmpuppyrescue.org/!">Adopt a Dog!</a></li>
+                <li><a class="black-text text-lighten-3" href="#!">Login</a></li>
+                <li><a class="black-text text-lighten-3" href="#!">Sign Up</a></li>
+                <li><a class="black-text text-lighten-3" href="#!">Dog Search</a></li>
+                <li><a class="black-text text-lighten-4 right" href="#http://rmpuppyrescue.org/!">Adopt a Dog!</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
+        <div class="footer-copyright grey-text brown">
           <div class="container">
-          
+            &copy 2018 DogTown Group, Inc.
           </div>
         </div>
       </footer>
@@ -88,8 +89,13 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<script src="assets/javascript/temp.js"></script>
+<script src="assets/javascript/logic.js"></script>
 
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<script src="assets/javascript/logic.js"></script>
 
 </body>
 </html>
