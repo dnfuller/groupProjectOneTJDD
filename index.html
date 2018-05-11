@@ -37,23 +37,29 @@
             </div>
         </nav>
 
-        <ul class="left hide-on-med-and-down">
-            <li><a href="#!">Find a Dog</a></li> <br>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">keyboard_arrow_down
-            </i></a></li>
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#!">My Account</a></li>
-              <li><a href="#!">Account Settings</a></li>
-            </ul>
+
+        <ul id="slide-out" class="side-nav">
+            <li class="findDogLink link-size"><a href="#!">Find a Dog</a></li>
+            
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header link-size">Account<i class="mdi-navigation-arrow-drop-down"></i></a>
+                    <div class="collapsible-body">
+                    <ul class="left hide-on-med-and-down drop-down">
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1 link-size">My Account<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2 link-size">Account Settings<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="#!">My Account</a></li>
+                            <li><a href="#!">Account Settings</a></li>
+                        </ul>
+                    </ul>
+                    </div>
+                </li>
+                </ul>
+            </li>
         </ul>
-    </header>
-
-    <br>
-
-    <div class="content">
-        <p>just some text to separate header and footer</p>
-
-    </div>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
 
     <br>

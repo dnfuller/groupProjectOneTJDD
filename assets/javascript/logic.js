@@ -6,5 +6,3 @@ document.addEventListener('DOMContentLoaded', function() {
     var collapsibleInstance = M.Collapsible.init(collapsibleElem, "edge");
   });
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  

@@ -8,7 +8,11 @@
      background-color: rgba(121, 85, 72, 0.65);
    }
 
-   nav .brand-logo {
+body {
+   box-sizing: border-box;
+}
+
+nav .brand-logo {
     margin-left: 10px;
     position: relative;
 }
@@ -36,10 +40,30 @@ nav .nav-content{
 }
 
 nav .navLinks {
-    font-size: 45px;
+    padding-top: 10px;
+    font-size: 20px;
 }
 
+#slide-out {
+  margin: 0;
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  border-bottom: solid 1px black;
+  width: 20%;
+}
 
+.findDogLink {
+  height: 40px;
+}
+
+.drop-down {
+  padding-top: 0;
+}
+
+.side-nav {
+  font-size: 18px;
+  height: 100px;
+}
 
 .footer-menu {
     color: black;
