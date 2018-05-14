@@ -16,7 +16,7 @@
   <!-- linking firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
 
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/login.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/dog-search.css">
 
@@ -87,54 +87,80 @@
         </div>
       </div>
 
-      <div class="col s5 offset-s3">
+      <div class="col s7 offset-s2">
         <div class="card brown lighten-3">
           <div class="card-content white-text">
-            <span class="card-title">About Us</span>
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+            <span class="card-title">Dog Search</span>
+
+            <div>
+              <p class="range-field">
+                <input type="range" id="test5" min="0" max="50" />
+              </p>
+            </div>
+
+            <div class="input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Choose Dog Size</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
+              </select>
+              <label>Materialize Multiple Select</label>
+              <select multiple>
+                <option value="" disabled selected>Choose Category</option>
+                <option value="1">Comfort/Therapy</option>
+                <option value="2">Hunting</option>
+                <option value="3">Breeding</option>
+              </select>
+              <label>Materialize Multiple Select</label>
+
+
+
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--footer-->
-    <footer class="page-footer brown lighten-2">
-      <div class="container brown lighten-1">
-        <div class="row">
-          <div class="col l3 s12 brown lighten-1">
-            <h5 class="black-text">DogTown</h5>
-          </div>
-          <div class="col l3  s12 section1 footer-menu">
-            <ul>
-              <li><a class="black-text text-lighten-3" href="index.html">About Us</a></li>
-              <li><a class="black-text text-lighten-3" href="assets/html/???.html">My Account</a></li>
-              <li><a class="black-text text-lighten-3" href="assets/html/settings.html">Account Settings</a></li>
-            </ul>
-          </div>
-          <div class="col l3  s12 section2 footer-menu">
-            <ul>
-              <li><a class="black-text text-lighten-3" href="assets/html/login.html">Login</a></li>
-              <li><a class="black-text text-lighten-3" href="assets/html/create.html">Sign Up</a></li>
-              <li><a class="black-text text-lighten-3" href="assets/html/dog-search.html">Dog Search</a></li>
-            </ul>
-          </div>
-          <div class="col l3  s12 section3 footer-menu">
-            <ul>
-              <li><a class="black-text text-lighten-3" href="http://rmpuppyrescue.org/">Adopt a Dog!</a></li>
-            </ul>
-          </div>
+  <!--footer-->
+  <footer class="page-footer brown lighten-2">
+    <div class="container brown lighten-1">
+      <div class="row">
+        <div class="col l3 s12 brown lighten-1">
+          <h5 class="black-text">DogTown</h5>
+        </div>
+        <div class="col l3  s12 section1 footer-menu">
+          <ul>
+            <li><a class="black-text text-lighten-3" href="index.html">About Us</a></li>
+            <li><a class="black-text text-lighten-3" href="assets/html/???.html">My Account</a></li>
+            <li><a class="black-text text-lighten-3" href="assets/html/settings.html">Account Settings</a></li>
+          </ul>
+        </div>
+        <div class="col l3  s12 section2 footer-menu">
+          <ul>
+            <li><a class="black-text text-lighten-3" href="assets/html/login.html">Login</a></li>
+            <li><a class="black-text text-lighten-3" href="assets/html/create.html">Sign Up</a></li>
+            <li><a class="black-text text-lighten-3" href="assets/html/dog-search.html">Dog Search</a></li>
+          </ul>
+        </div>
+        <div class="col l3  s12 section3 footer-menu">
+          <ul>
+            <li><a class="black-text text-lighten-3" href="http://rmpuppyrescue.org/">Adopt a Dog!</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-copyright grey-text brown">
-        <div class="container">
-          &copy 2018 DogTown Group, Inc.
-        </div>
+    </div>
+    <div class="footer-copyright grey-text brown">
+      <div class="container">
+        &copy 2018 DogTown Group, Inc.
       </div>
-    </footer>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="assets/javascript/logic.js"></script>
+    </div>
+  </footer>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="assets/javascript/logic.js"></script>
 
 
 </body>
