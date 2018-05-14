@@ -1,0 +1,151 @@
+ /*
+  When creating your CSS selector,
+  change "brown" to something of your choosing
+  */
+  .waves-effect.waves-brown .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+        background-color: rgba(121, 85, 72, 0.65);
+    }
+
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    body {
+       box-sizing: border-box;
+    }
+
+    .navContent, .mainContent {
+        float: left;
+    }
+
+    .navContent {
+        background: #8d6e63;
+        margin-right: 15px;
+        width: 250px;
+        height: 100%;
+    }
+
+    nav .brand-logo {
+        margin-left: 10px;
+        position: relative;
+    }
+
+    nav .responsive-img {
+        margin-top: 5px;
+        margin-bottom: -15px;
+        width: 115px;
+        height: 75px;
+    }
+
+    nav .nav-title {
+        padding: 15px 0 0 0;
+        height: 60px;
+        color: black;
+    }
+
+    nav .top-nav {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    nav .nav-content{
+        height: 75px;
+    }
+
+    nav .navLinks {
+        padding-top: 10px;
+        font-size: 20px;
+    }
+
+    .collapsible-header {
+      background: #8d6e63;
+      border-top: solid 1px black;
+      border-right: solid 1px black;
+      border-left: solid 1px black;
+      height: 65px;
+      font-size: 25px;
+    }
+
+    .collapsible-body {
+      height: 65px;
+      font-size: 20px;
+      padding-top: 25px;
+      padding-left: 45px;
+    }
+
+    #slide-out {
+      margin-top: 0;
+
+      /* width: 15%; */
+    }
+
+    .findDogLink {
+      height: 65px;
+      padding-top: 15px;
+      padding-left: 15px;
+      padding-bottom: 25px;
+      font-size: 25px;
+    }
+
+    .dogSearch {
+      width: 30px;
+      height: 30px;
+      margin-left: 25px;
+      margin-bottom: -5px;
+    }
+
+    .drop-down {
+      margin-top: -26px;
+      padding-top: 0;
+    }
+
+    .side-nav {
+      font-size: 18px;
+      border-top: solid 1px black;
+      border-right: solid 1px black;
+      margin-bottom: 0;
+      min-height: 550px;
+    }
+
+    .card {
+      width: 100%;
+      min-height: 450px;
+      margin-top: 40px;
+      margin-left: -175px;
+    }
+
+    .footer-menu {
+        color: black;
+        font-weight: 15px;
+    }
+
+    footer .section1 {
+      position: relative;
+      float: left;
+    }
+
+    footer section2 {
+      position: relative;
+      float: right;
+      /* margin: 0; */
+    }
+
+    footer section3 {
+      position: relative;
+      float: right;
+      margin: 0;
+    }
+
+    .page-footer {
+        border-top: solid 1px black;
+        margin-top: -20px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        font-weight: 15px;
+    }
