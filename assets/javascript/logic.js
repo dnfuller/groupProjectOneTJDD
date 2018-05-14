@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -7,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var collapsibleInstance = M.Collapsible.init(collapsibleElem, "edge");
   });
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+var instance = M.FormSelect.getInstance(elem);
+
+// Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 var config = {
     apiKey: "AIzaSyAk6IGsE44hQcZ0sPeGHenFFd-r4wtbOwQ",
     authDomain: "groupprojectonetjdd.firebaseapp.com",
@@ -66,6 +72,7 @@ $("#createSubmit").on('click', (event) => {
                 console.log(firebase.auth().currentUser.uid + " create");
             }
         })
+
     }else{
         M.toast({html: 'password did not match confirm'});
     }
@@ -78,3 +85,4 @@ auth.onAuthStateChanged(user => {
         console.log("signed Out.")
     }
 });
+
