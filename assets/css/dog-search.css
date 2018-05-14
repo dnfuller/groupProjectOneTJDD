@@ -1,0 +1,9 @@
+.dog-search {
+  min-height: 100px;
+  max-height: 300px;
+}
+
+.range-field {
+  width: 30px;
+  max-width: 50px;
+}
