@@ -18,6 +18,8 @@ $(document).ready(function() {
     '5301 W 38th Ave, Wheat Ridge, CO 80212',  
     '101 Englewood Pkwy, Englewood, CO 80110'];    
     
+    var LatLngAddress = [];
+
     //get location form
     var locationForm = document.getElementById('location-form');
 
@@ -38,7 +40,7 @@ $(document).ready(function() {
         for (var i = 0; i < addresses.length; i++) {
             
             location = addresses[i];
-            console.log(i + ', ' + location);
+            console.log(location);
             
             axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
                 params:{
@@ -54,19 +56,27 @@ $(document).ready(function() {
                 var lat = response.data.results[0].geometry.location.lat;
                 var lng = response.data.results[0].geometry.location.lng;          
                 //output to app
+                console.log(lat +', ' + lng);
                         
-                console.log(i + ' lat: ' + lat + ', lng: ' + lng);
+                LatLngAddress.push({"lat": lat, "lng": lng});
+                
             })
             .catch(function(error) {
                 console.log(error);
             });
 
-            if (computeDistanceBetween()) {
+            // if (computeDistanceBetween()) {
 
-            }
+            // }
         
         }
 
+        for (var i = 0; i < LatLngAddress.length; i++) {
+
+            console.log(i + LatLngAddress[i]);
+        
+        }
+        
         
         axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
             params:{
@@ -76,7 +86,7 @@ $(document).ready(function() {
         })
         .then(function(response) {
             //log full response
-            console.log(response);
+            //console.log(response);
             
             //formatted address
             var formattedAddress = response.data.results[0].formatted_address;
@@ -112,7 +122,7 @@ $(document).ready(function() {
             // document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
             document.getElementById('address-components').innerHTML = addressComponentsOutput;
             // document.getElementById('geometry').innerHTML = geometryOutput;
-            console.log('lat: ' + lat + ', lng: ' + lng);
+           // console.log('lat: ' + lat + ', lng: ' + lng);
 
             
 
