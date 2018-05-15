@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     
@@ -27,9 +27,8 @@
     <div class="row">
 
         <div class="col s3 m3">
-            <div class="card-panel teal">
-                <span class="white-text">I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                </span>  
+            <div class="card brown lighten-2">
+                  
             </div>
         </div>
           
@@ -39,20 +38,49 @@
             <div class ="row">
 
                 <div class="col s12 m12">
-                    <div class="card-panel teal">
-                        <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                        </span>
+                    <div class="card brown lighten-2">
+                        
                     </div>
                 </div>
         
 
 
             <div class="col s12 m12">
-                <div class="card-panel teal">
-                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                    </span>   
+                <div class="card brown lighten-1">
+                    <div class="row">
+                        <form class="col l12 m12 card-content white-text">
+                            <div class="row">
+                                <div class="col l12">
+                                    <span class="card-title">Account Settings</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 l12 m12">
+                                    Address:
+                                    <div class="input-field inline" id="addressText">
+                                        <!-- <input id="addressInput" type="text" class="validate">
+                                        <label id="addressLabel" for="addressInput">Address</label>
+                                        <span class="helper-text" data-error="wrong" data-success="right">Ex: 1234 Big Street</span> -->
+                                        <i class="material-icons tiny" for="addressText">edit</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    Dog Owner?
+                                    <div class="switch">
+                                        <label>
+                                          No
+                                          <input type="checkbox" id="dogOwnerSettings">
+                                          <span class="lever"></span>
+                                          Yes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -66,5 +94,7 @@
 
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="assets/javascript/logic.js"></script>
 </body>
