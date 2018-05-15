@@ -94,15 +94,17 @@
       <div class=" col s7 offset-s2">
         <div class="card brown lighten-3" >
           <div class="card-content white-text">
-            <nav>
+            
               <div class="nav-wrapper brown lighten-1">
+                <form>
                 <a href="#" class="brand-logo">Dog Search</a>
                 <ul id="nav-mobile" class="right">
+                  
                   <!-- <li></li> -->
-                  <div class="range-field col s4">
-                    <input type="range" id="test5" min="0" max="50" />
+                  <div class="range-field col s3">
+                    <input type="range" id="rangeSlide" min="0" max="50" value=""/>
                   </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col s3">
                       <select multiple>
                         <option value="" disabled selected>Dog Size</option>
                         <option value="1">Small</option>
@@ -113,45 +115,24 @@
                     </div>
                   <!-- <li></li> -->
                   <div class="col s2"></div>
-                  <div class="input-field col s4">
+                  <div class="input-field col s3">
                     <select multiple>
                       <option value="" disabled selected>Category</option>
                       <option value="1">Comfort/Therapy</option>
                       <option value="2">Hunting</option>
                       <option value="3">Breeding</option>
                     </select>
-                    <label></label>
+                    <div class="row">
+                      <div class = "input-feild col s3 offset-s9">
+                          <input type = "submit" class = "waves-effect waves-light btn-large" value = "Submit" id = "dogSearchBtn">
+                      </div>
+                    </div>
+                <!-- <label>Materialize Multiple Select</label> -->
                   </div>
-                </ul>
-              </div>
-            </nav>
-
-            
-            <form class = 'col s3'>
-              <div class="range-field">
-                <input type="range" id="rangeSlide" min="0" max="50" />
-              </div>
-            
-              <div class="input-field col s3">
-                <select multiple>
-                  <option value="" disabled selected>Choose Dog Size</option>
-                  <option value="1">Small</option>
-                  <option value="2">Medium</option>
-                  <option value="3">Large</option>
-                </select>
-                <label></label>
-                <select multiple>
-                  <option value="" disabled selected>Choose Category</option>
-                  <option value="1">Comfort/Therapy</option>
-                  <option value="2">Hunting</option>
-                  <option value="3">Breeding</option>
-                </select>
-                <label>Materialize Multiple Select</label>
-                <div class="container" id="dogArea">
-
-                </div>
-              </div>
             </form>
+            <div class = "container" id="dogArea">
+
+            </div>
             </div>
           </div>
         </div>
@@ -195,17 +176,13 @@
     </div>
   </footer>
   <!-- Compiled and minified JavaScript -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc&libraries=geometry">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
   <script src="../javascript/logic.js"></script>
-<<<<<<< HEAD
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type = 'text/javascript' src="../javascript/dogLogic.js"></script>
-=======
-
-  <script type='text/javascript' src="../javascript/dog-search.js"></script>
->>>>>>> c949e840f97994b192f00d3670c8ee55bf9f1cf5
 
 
 </body>

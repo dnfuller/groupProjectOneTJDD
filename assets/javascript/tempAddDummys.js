@@ -7,19 +7,23 @@ var config = {
     messagingSenderId: "302849684174"
   };
   firebase.initializeApp(config);
+  var auth = firebase.auth();
+  var database = firebase.database();
   function writeUserData(userId, name, email, lat, lon, url, info, dogName) {
     // create file full of user ids
     firebase.database().ref('allIds').push({
         id:userId
     }).catch(e => console.log("id " + e.message))
     // create file full of dogs
+    var intLat = parseFloat(lat);
+    var intLon = parseFloat(lon);
     firebase.database().ref('dogs').push({
         ownerId: userId,
         ownerName: name,
         dogName: dogName,
         loc: {
-            lat: lat,
-            lng: lon,
+            lat: intLat,
+            lng: intLon,
             },
         url: url,
         info: info,
@@ -46,7 +50,7 @@ $("#dummySubmit").on('click', (event) => {
     var url = $("#url").val();
     var failed = false;
     // check if the password and confirm password is the same
-    if(password === passwordConfirm){
+    if(true){
         // creates user with email and password
         auth.createUserWithEmailAndPassword(email, password).catch(function(e){
             M.toast({html: e.message});
@@ -58,7 +62,15 @@ $("#dummySubmit").on('click', (event) => {
                 writeUserData(firebase.auth().currentUser.uid, name, email, lat, lon, url, info, dogName);
                 console.log(firebase.auth().currentUser.uid + " create");
                 // redirect to home page
-                window.location.replace("../../index.html");
+                // window.location.replace("../../index.html");
+                $("#name").val("");
+                $("#info").val("");
+                $("#dogName").val("");
+                $("#email").val("");
+                $("#password").val("");
+                $("#lat").val("");
+                $("#long").val("");
+                $("#url").val("");
             }
         })
 
