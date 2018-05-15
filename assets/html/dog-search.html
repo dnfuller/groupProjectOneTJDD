@@ -92,14 +92,14 @@
       </div>
 
       <div class=" col s7 offset-s2">
-        <div class="card brown lighten-3">
+        <div class="card brown lighten-3" >
           <div class="card-content white-text">
             <span class="card-title">Dog Search</span>
 
-
+            
             <form class = 'col s3'>
               <div class="range-field">
-                <input type="range" id="test5" min="0" max="50" />
+                <input type="range" id="rangeSlide" min="0" max="50" />
               </div>
             
               <div class="input-field col s3">
@@ -118,6 +118,9 @@
                   <option value="3">Breeding</option>
                 </select>
                 <label>Materialize Multiple Select</label>
+                <div class="container" id="dogArea">
+
+                </div>
               </div>
             </form>
           </div>
@@ -125,6 +128,7 @@
       </div>
     </div>
   </div>
+  
 
   <!--footer-->
   <footer class="page-footer brown lighten-2">
@@ -163,10 +167,10 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
   <script src="../javascript/logic.js"></script>
-
-  <script type = 'text/javascript' src="../javascript/dog-search.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type = 'text/javascript' src="../javascript/dogLogic.js"></script>
 
 
 </body>

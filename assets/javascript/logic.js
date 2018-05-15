@@ -128,26 +128,7 @@ $(document).ready(function(){
 
 
 // ================================================================================================================================
-var dogIdArray=[];
-database.ref('users/allIds').on('child_added', snapshot => {
-    dogIdArray.push(snapshot.val().id);
-       
-})
-$("body").on("click", '#testBtn', function(){
-    for(var i = 0; i < dogIdArray.length; i++){
-        
-        database.ref('users/' + dogIdArray[i] + '/dogs').once('child_added').then(snapshot => {
-            if(snapshot.val().isOwner && dogIdArray[i] != currentUserID){
-                var dogName = snapshot.val().name;
-                var dogPicUrl = snapshot.val().pic;
-                var dogInfo = snapshot.val().info;
-                var dogCard = $("<div>").addClass("card");
-                var dogPic = $("<div>").addClass("card-image waves-effect waves-block waves-light").append($("<img>").addClass("activator").attr("src", dogPicUrl));
-                
-            }
-        })
-    }
-})
+
 
 
 
