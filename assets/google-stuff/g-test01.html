@@ -11,7 +11,7 @@
         
     #map {
         height: 400px;
-        width: 100%;
+        width: 400px;
     }
     </style>
 </head>
@@ -47,26 +47,44 @@
         
         var database = firebase.database();
 
-        database.ref('/dogs')
+        var dogArray = [];
 
         function initMap() {
             var options = {
-                zoom: 8,
+                zoom: 10,
                 center: {lat: 39.6766368, lng: -104.9614844}
             }
             var map = new google.maps.Map(document.getElementById('map'), options);
+
+            database.ref('/dogs').on('child_added', snapshot => {
+                console.log(snapshot.val());
+                dogArray.push(snapshot.val());
+                addDogMarker(snapshot.val().loc.lat, snapshot.val().loc.lng);
+            });
             
             
-            //add markerfunction
-            function addMarker(lt, lg) {
+            
+            
+            //add user markerfunction
+            function addUserMarker(lt, lg) {
+                var marker = new google.maps.Marker({
+                    position: {lat: lt, lng: lg},
+                    map: map,
+                });
+            }
+            
+            //add dog markerfunction
+            function addDogMarker(lt, lg) {
                 var marker = new google.maps.Marker({
                     position: {lat: lt, lng: lg},
                     map: map,
                     icon: 'pawIcon_32x32.png'
                 });
             }   
-            addMarker(39.6766368, -104.9614844);
-       
+            addUserMarker(39.6766368, -104.9614844);
+            
+            
+
             //get location form
             var locationForm = document.getElementById('location-form');
 
@@ -90,7 +108,7 @@
                 })
                 .then(function(response) {
                     //log full response
-                    console.log(response);
+                    // console.log(response);
 
                     //address components
                     var addressComponents = response.data.results[0].address_components;
@@ -105,11 +123,11 @@
                     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     Lat = Number(response.data.results[0].geometry.location.lat);
                     Lng = Number(response.data.results[0].geometry.location.lng);
-                    addMarker(Lat, Lng);
+                    addDogMarker(Lat, Lng);
                     
-                    console.log(Lat);
-                    console.log(Lng);
-                    console.log(LatLng);
+                    // console.log(Lat);
+                    // console.log(Lng);
+                    // console.log(LatLng);
                     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                    
                 })
                 .catch(function(error) {
