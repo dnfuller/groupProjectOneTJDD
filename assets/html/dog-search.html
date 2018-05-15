@@ -16,9 +16,9 @@
   <!-- linking firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
 
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/login.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/dog-search.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/login.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/dog-search.css">
 
 </head>
 
@@ -28,7 +28,7 @@
   <header>
     <nav class="nav-extended">
       <div class="nav-wrapper brown lighten-2">
-        <a href="index.html" class="brand-logo"><img class="responsive-img" src="assets/images/logo.png"></a>
+        <a href="index.html" class="brand-logo"><img class="responsive-img" src="../images/logo.png"></a>
         <ul class="right hide-on-med-and-down top-nav">
           <li><a class="navLinks" href="assets/html/create.html">Sign Up</a></li>
           <li><a class="navLinks" href="assets/html/login.html">Log In</a></li>
@@ -46,7 +46,7 @@
         <div class="navContent">
           <ul id="slide-out" class="side-nav">
             <li class="findDogLink">
-              <a href="assets/html/dog-search.html">Find a Dog<img src="assets/images/dog_search.png" alt="dog search button" class="dogSearch"></a>
+              <a href="assets/html/dog-search.html">Find a Dog<img src="../images/dog_search.png" alt="dog search button" class="dogSearch"></a>
             </li>
 
             <li class="no-padding">
@@ -92,28 +92,30 @@
           <div class="card-content white-text">
             <span class="card-title">Dog Search</span>
 
-            <div>
-              <p class="range-field">
-                <input type="range" id="test5" min="0" max="50" />
-              </p>
-            </div>
+            <form>
+              <div>
+                <p class="range-field">
+                  <input type="range" id="test5" min="0" max="50" />
+                </p>
+              </div>
 
-            <div class="input-field col s12">
-              <select multiple>
-                <option value="" disabled selected>Choose Dog Size</option>
-                <option value="1">Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
-              </select>
-              <label>Materialize Multiple Select</label>
-              <select multiple>
-                <option value="" disabled selected>Choose Category</option>
-                <option value="1">Comfort/Therapy</option>
-                <option value="2">Hunting</option>
-                <option value="3">Breeding</option>
-              </select>
-              <label>Materialize Multiple Select</label>
+              <div class="input-field col s12">
+                <select multiple>
+                  <option value="" disabled selected>Choose Dog Size</option>
+                  <option value="1">Small</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Large</option>
+                </select>
+                <label></label>
+                <select multiple>
+                  <option value="" disabled selected>Choose Category</option>
+                  <option value="1">Comfort/Therapy</option>
+                  <option value="2">Hunting</option>
+                  <option value="3">Breeding</option>
+                </select>
+                <label></label>
 
+              </form>
 
 
             </div>
@@ -160,7 +162,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="assets/javascript/logic.js"></script>
+  <script src="../javascript/logic.js"></script>
 
 
 </body>
