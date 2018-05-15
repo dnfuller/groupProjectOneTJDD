@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     
@@ -55,15 +55,30 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col s12">
+                                <div class="col s12 l12 m12">
                                     Address:
-                                    <div class="input-field inline">
-                                        <input id="addressInput" type="text" class="validate">
+                                    <div class="input-field inline" id="addressText">
+                                        <!-- <input id="addressInput" type="text" class="validate">
                                         <label id="addressLabel" for="addressInput">Address</label>
-                                        <span class="helper-text" data-error="wrong" data-success="right">Ex: 1234 Big Street</span>
+                                        <span class="helper-text" data-error="wrong" data-success="right">Ex: 1234 Big Street</span> -->
+                                        <i class="material-icons tiny" for="addressText">edit</i>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    Dog Owner?
+                                    <div class="switch">
+                                        <label>
+                                          No
+                                          <input type="checkbox" id="dogOwnerSettings">
+                                          <span class="lever"></span>
+                                          Yes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </form>
                     </div>
                 </div>
