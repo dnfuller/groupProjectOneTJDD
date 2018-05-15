@@ -4,6 +4,18 @@
 }
 
 .range-field {
-  width: 30px;
-  max-width: 50px;
+  width: 75px;
+}
+
+.select-wrapper {
+  width: 100px;
+}
+
+input.checkbox  {
+	 width: 15px;
+	 height: 15px;
+}
+
+.dropdown-content {
+  font-size: 5px;
 }
