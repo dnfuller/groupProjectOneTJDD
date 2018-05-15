@@ -94,32 +94,58 @@
       <div class=" col s7 offset-s2">
         <div class="card brown lighten-3">
           <div class="card-content white-text">
-            <span class="card-title">Dog Search</span>
-
-
-            <form class = 'col s3'>
-              <div class="range-field">
-                <input type="range" id="test5" min="0" max="50" />
+            <nav>
+              <div class="nav-wrapper brown lighten-1">
+                <a href="#" class="brand-logo">Dog Search</a>
+                <ul id="nav-mobile" class="right">
+                  <!-- <li></li> -->
+                  <div class="range-field col s4">
+                    <input type="range" id="test5" min="0" max="50" />
+                  </div>
+                    <div class="input-field col s4">
+                      <select multiple>
+                        <option value="" disabled selected>Dog Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
+                      </select>
+                      <label></label>
+                    </div>
+                  <!-- <li></li> -->
+                  <div class="col s2"></div>
+                  <div class="input-field col s4">
+                    <select multiple>
+                      <option value="" disabled selected>Category</option>
+                      <option value="1">Comfort/Therapy</option>
+                      <option value="2">Hunting</option>
+                      <option value="3">Breeding</option>
+                    </select>
+                    <label></label>
+                  </div>
+                </ul>
               </div>
-            
-              <div class="input-field col s3">
+            </nav>
+
+            <form class="col s3 wrapper">
+
+
+              <!-- <div class="input-field col s3">
                 <select multiple>
                   <option value="" disabled selected>Choose Dog Size</option>
                   <option value="1">Small</option>
                   <option value="2">Medium</option>
                   <option value="3">Large</option>
                 </select>
-
-                <label>Materialize Multiple Select</label>
+                <label></label>
                 <select multiple>
                   <option value="" disabled selected>Choose Category</option>
                   <option value="1">Comfort/Therapy</option>
                   <option value="2">Hunting</option>
                   <option value="3">Breeding</option>
                 </select>
-                <label>Materialize Multiple Select</label>
-              </div>
+                <label></label> -->
             </form>
+            </div>
           </div>
         </div>
       </div>
@@ -166,7 +192,7 @@
 
   <script src="../javascript/logic.js"></script>
 
-  <script type = 'text/javascript' src="../javascript/dog-search.js"></script>
+  <script type='text/javascript' src="../javascript/dog-search.js"></script>
 
 
 </body>
