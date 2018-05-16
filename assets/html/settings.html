@@ -1,100 +1,176 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>User Settings</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>DogTown</title>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- linking firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+
 </head>
+
 <body>
-<div class="container">
 
-    <div class="col s12 m7">
-        <h2 class="header">Settings</h2>
-        <div class="card horizontal">
-            <div class="card-image"> 
-            </div>
-        </div>
-    </div>    
-
-
+  <!-- Header Navbar -->
+  <header>
+    <nav class="nav-extended">
+      <div class="nav-wrapper brown lighten-2">
+        <a href="../../index.html" class="brand-logo"><img class="responsive-img" src="../images/logo.png"></a>
+        <ul class="right hide-on-med-and-down top-nav">
+          <li><a class="navLinks" href="create.html">Sign Up</a></li>
+          <li><a class="navLinks" href="login.html">Log In</a></li>
+        </ul>
+      </div>
+      <div class="nav-content brown lighten-1">
+        <span class="nav-title brown lighten-1">DogTown</span>
+        <a class="btn-floating btn-large halfway-fab waves-effect waves-light" href="../../index.html">Home</a>
+      </div>
+    </nav>
+  </header>
+  <div class="clearfix">
     <div class="row">
+      <div "col s3">
+        <div class="navContent">
+          <ul id="slide-out" class="side-nav">
+            <li class="findDogLink">
+              <a href="dog-search.html">Find a Dog<img src="../images/dog_search.png" alt="dog search button" class="dogSearch"></a>
+            </li>
 
-        <div class="col s3 m3">
-            <div class="card brown lighten-2">
-                  
-            </div>
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header">Account <img
+                                  <i class="mdi-navigation-arrow-drop-down"></i>
+                              </a>
+                  <div class="collapsible-body">
+                    <ul class="left hide-on-med-and-down drop-down">
+                      <li>
+                        <a class="dropdown-button" href="???.html" data-activates="dropdown1">My Account
+                                              <i class="mdi-navigation-arrow-drop-down right"></i>
+                                          </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-button" href="settings.html" data-activates="dropdown2">Account Settings
+                                              <i class="mdi-navigation-arrow-drop-down right"></i>
+                                          </a>
+                      </li>
+                      <ul id='dropdown1' class='dropdown-content'>
+                        <li>
+                          <a href="???.html">My Account</a>
+                        </li>
+                        <li>
+                          <a href="settings.html">Account Settings</a>
+                        </li>
+                      </ul>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse">
+                  <i class="mdi-navigation-menu"></i>
+              </a>
         </div>
-          
-        
-        <div class="col s9 m9">
+      </div>
 
-            <div class ="row">
 
-                <div class="col s12 m12">
-                    <div class="card brown lighten-2">
-                        
-                    </div>
+
+      <div class="col s7 offset-s2">
+        <div class="card brown lighten-1">
+          <div class="row">
+            <form class="col l12 m12 card-content white-text">
+              <div class="row">
+                <div class="col l12">
+                  <span class="card-title">Account Settings</span>
                 </div>
-        
-
-
-            <div class="col s12 m12">
-                <div class="card brown lighten-1">
-                    <div class="row">
-                        <form class="col l12 m12 card-content white-text">
-                            <div class="row">
-                                <div class="col l12">
-                                    <span class="card-title">Account Settings</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s12 l12 m12">
-                                    Address:
-                                    <div class="input-field inline" id="addressText">
-                                        <!-- <input id="addressInput" type="text" class="validate">
+              </div>
+              <div class="row">
+                <div class="col s12 l12 m12">
+                  Address:
+                  <div class="input-field inline" id="addressText">
+                    <!-- <input id="addressInput" type="text" class="validate">
                                         <label id="addressLabel" for="addressInput">Address</label>
                                         <span class="helper-text" data-error="wrong" data-success="right">Ex: 1234 Big Street</span> -->
-                                        <i class="material-icons tiny" for="addressText">edit</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s12">
-                                    Dog Owner?
-                                    <div class="switch">
-                                        <label>
+                    <i class="material-icons tiny" for="addressText">edit</i>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  Dog Owner?
+                  <div class="switch">
+                    <label>
                                           No
                                           <input type="checkbox" id="dogOwnerSettings">
                                           <span class="lever"></span>
                                           Yes
                                         </label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </form>
-                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-        </div> 
+            </form>
+          </div>
+        </div>
+      </div>
 
     </div>
 
-</div>
+  </div>
+
+  </div>
+  <!--footer-->
+  <footer class="page-footer brown lighten-2">
+    <div class="container brown lighten-1">
+      <div class="row">
+        <div class="col l3 s12 brown lighten-1">
+          <h5 class="black-text">DogTown</h5>
+        </div>
+        <div class="col l3  s12 section1 footer-menu">
+          <ul>
+            <li><a class="black-text text-lighten-3" href="../../index.html">About Us</a></li>
+            <li><a class="black-text text-lighten-3" href="???.html">My Account</a></li>
+            <li><a class="black-text text-lighten-3" href="settings.html">Account Settings</a></li>
+          </ul>
+        </div>
+        <div class="col l3  s12 section2 footer-menu">
+          <ul>
+            <li><a class="black-text text-lighten-3" href="login.html">Login</a></li>
+            <li><a class="black-text text-lighten-3" href="create.html">Sign Up</a></li>
+            <li><a class="black-text text-lighten-3" href="dog-search.html">Dog Search</a></li>
+          </ul>
+        </div>
+        <div class="col l3  s12 section3 footer-menu">
+          <ul>
+            <li><a class="black-text text-lighten-3" href="http://rmpuppyrescue.org/">Adopt a Dog!</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey-text brown">
+      <div class="container">
+        &copy 2018 DogTown Group, Inc.
+      </div>
+    </div>
+  </footer>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="../javascript/logic.js"></script>
 
 
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="assets/javascript/logic.js"></script>
 </body>
+
+</html>

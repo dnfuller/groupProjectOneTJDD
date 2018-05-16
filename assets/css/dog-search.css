@@ -31,12 +31,12 @@
 
 element.style {
   height: 120px;
-  overflow:hidden !important;
+  overflow: hidden !important;
 }
 
-input .checkbox  {
-	 width: 15px!important;
-	 height: 15px!important;
+input .checkbox {
+  width: 15px !important;
+  height: 15px !important;
 }
 
 [type="checkbox"]+span:not(.lever) {
