@@ -52,7 +52,7 @@ $("body").on('click', "#dogSearchBtn", event => {
             if(distance < range){
                 var dogArea = $("#dogArea")
                 var dogCol = $("<div>").addClass("col l6")
-                var dogCard = $("<div>").addClass("card dogCard")
+                var dogCard = $("<div>").addClass("card dogCard").attr("data-id", dogArray[i].ownerId).attr("data-index", i);
                 var dogImage = $("<div>").addClass("card-image").html("<image class='dogImage' src='" + dogArray[i].url + "' alt='dog image' /> <span class='card-title'>" + dogArray[i].dogName + "</span>");
                 var dogContent = $("<div>").addClass("card-content").text(dogArray[i].info);
                 if(i % 2 == 0 && i != 1 || i == 0){
@@ -76,4 +76,8 @@ $("body").on('click', "#dogSearchBtn", event => {
     // in a .then i will test if the distance between each dog is less than or equal too the range then i will
     // i will then add each dog to the page if they are in range
     
+})
+$("#dogArea").on("click", ".dogCard", function(){
+    var ownerId = $(this).attr("data-id")
+
 })
