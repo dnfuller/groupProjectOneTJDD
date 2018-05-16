@@ -6,13 +6,12 @@
     <title>test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc&callback=initMap" async defer></script>
+    
     <style>
         
     #map {
         height: 400px;
-        width: 100%;
+        width: 400px;
     }
     </style>
 </head>
@@ -31,85 +30,112 @@
     </div>
     <br>
     <div id = 'map'></div>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc&callback=initMap" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
     <script>
-        //get location form
-        var locationForm = document.getElementById('location-form');
-
-        var Lat = 39.6766;
-        var Lng = -104.9619;
+        //initialize firebase
+        var config = {
+            apiKey: "AIzaSyAk6IGsE44hQcZ0sPeGHenFFd-r4wtbOwQ",
+            authDomain: "groupprojectonetjdd.firebaseapp.com",
+            databaseURL: "https://groupprojectonetjdd.firebaseio.com",
+            projectId: "groupprojectonetjdd",
+            storageBucket: "groupprojectonetjdd.appspot.com",
+            messagingSenderId: "302849684174"
+        };
+        firebase.initializeApp(config);     
         
-        
+        var database = firebase.database();
 
-        //listen fo submit
-        locationForm.addEventListener('submit', geocode);
-    
-        function geocode(event) {
-           //prevent actual submit
-           event.preventDefault();
+        var dogArray = [];
 
-            var location = document.getElementById('location-input').value;
-            
-            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-                params:{
-                    address: location,
-                    key: 'AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc'
-                }
-            })
-            .then(function(response) {
-                //log full response
-                console.log(response);
-
-                // //formatted address
-                // var formattedAddress = response.data.results[0].formatted_address;
-                // var formattedAddressOutput = `
-                //     <ul class = 'list-group'>
-                //         <li class = 'list-group-item'>${formattedAddress}</li>
-                //     </ul>
-                // `;
-
-                //address components
-                var addressComponents = response.data.results[0].address_components;
-                var addressComponentsOutput = '<ul class = "list-group">';
-
-                // lat and long storred here 
-                //
-                //
-                //
-                //
-                //
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                Lat = Number(response.data.results[0].geometry.location.lat);
-                Lng = Number(response.data.results[0].geometry.location.lng);
-                var LatLng = {lat: Lat, lng: Lng};
-                console.log(Lat);
-                console.log(Lng);
-                console.log(LatLng);
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-                
-                var geometryOutput = `
-                    <ul class = 'list-group'>
-                        <li class = 'list-group-item'><strong>Lattitude</strong>:${Lat}</li>
-                        <li class = 'list-group-item'><strong>Longitude</strong>:${Lng}</li>
-                    </ul>
-                `;
-
-                //output to app
-               // document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
-                document.getElementById('address-components').innerHTML = addressComponentsOutput;
-                //document.getElementById('geometry').innerHTML = geometryOutput;
-
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-       
+        function initMap() {
+            var options = {
+                zoom: 10,
+                center: {lat: 39.6766368, lng: -104.9614844}
             }
+            var map = new google.maps.Map(document.getElementById('map'), options);
 
-        
-        
-        
+            database.ref('/dogs').on('child_added', snapshot => {
+                console.log(snapshot.val());
+                dogArray.push(snapshot.val());
+                addDogMarker(snapshot.val().loc.lat, snapshot.val().loc.lng);
+            });
+            
+            
+            
+            
+            //add user markerfunction
+            function addUserMarker(lt, lg) {
+                var marker = new google.maps.Marker({
+                    position: {lat: lt, lng: lg},
+                    map: map,
+                });
+            }
+            
+            //add dog markerfunction
+            function addDogMarker(lt, lg) {
+                var marker = new google.maps.Marker({
+                    position: {lat: lt, lng: lg},
+                    map: map,
+                    icon: 'pawIcon_32x32.png'
+                });
+            }   
+            addUserMarker(39.6766368, -104.9614844);
+            
+            
+
+            //get location form
+            var locationForm = document.getElementById('location-form');
+
+            var Lat = 39.6766;
+            var Lng = -104.9619;
+
+            //listen fo submit
+            locationForm.addEventListener('submit', geocode);
+
+            function geocode(event) {
+            //prevent actual submit
+            event.preventDefault();
+
+                var location = document.getElementById('location-input').value;
+
+                axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                    params:{
+                        address: location,
+                        key: 'AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc'
+                    }
+                })
+                .then(function(response) {
+                    //log full response
+                    // console.log(response);
+
+                    //address components
+                    var addressComponents = response.data.results[0].address_components;
+                    var addressComponentsOutput = '<ul class = "list-group">';
+
+                    // lat and long storred here 
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    Lat = Number(response.data.results[0].geometry.location.lat);
+                    Lng = Number(response.data.results[0].geometry.location.lng);
+                    addDogMarker(Lat, Lng);
+                    
+                    // console.log(Lat);
+                    // console.log(Lng);
+                    // console.log(LatLng);
+                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                    
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+            }       
+        }
 
     </script>    
     

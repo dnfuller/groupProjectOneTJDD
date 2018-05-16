@@ -11,12 +11,18 @@ $(document).ready(function() {
     //     messagingSenderId: "302849684174"
     //   };
     //   firebase.initializeApp(config);
+  
+
+
     var addresses = [
     '2810 Quebec St, Denver, CO 80207',
     '5125 W Florida Ave, Denver, CO 80219',
     '7984 W Alameda Ave, Lakewood, CO 80226',
     '5301 W 38th Ave, Wheat Ridge, CO 80212',  
-    '101 Englewood Pkwy, Englewood, CO 80110'];    
+    '101 Englewood Pkwy, Englewood, CO 80110',
+    '2727 W Evans Ave, Denver, CO 80219',
+    '2199 S University Blvd, Denver, CO 80208'
+    ];    
     
     var LatLngAddress = [];
 
@@ -150,7 +156,7 @@ $(document).ready(function() {
     //     }
     //     addMarker(39.6766, -104.9619);
 
-    // }
-
+  //}
+  
   //NO CODE BELOW THIS LINE
 });
