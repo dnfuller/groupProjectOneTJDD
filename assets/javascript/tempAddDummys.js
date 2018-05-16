@@ -67,10 +67,9 @@ $("#dummySubmit").on('click', (event) => {
                 $("#info").val("");
                 $("#dogName").val("");
                 $("#email").val("");
-                $("#password").val("");
                 $("#lat").val("");
                 $("#long").val("");
-                $("#url").val("");
+                
             }
         })
 
