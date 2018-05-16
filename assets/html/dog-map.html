@@ -50,12 +50,13 @@
         <div class="navContent">
           <ul id="slide-out" class="side-nav">
             <li class="findDogLink">
-
               <a href="dog-search.html">Find a Dog<img src="../images/dog_search.png" alt="dog search button" class="dogSearch"></a>
-
             </li>
 
-            <li class="no-padding">
+            <li class="findDogLink">
+              <a href="dog-map.html">Dog Map</a>
+            </li>
+            <!-- <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
                 <li>
                   <a class="collapsible-header">Account <img
@@ -89,7 +90,7 @@
                       </ul>
                     </ul>
                   </div>
-                </li>
+                </li> -->
               </ul>
             </li>
           </ul>
@@ -180,7 +181,7 @@
 
         function initMap() {
             var options = {
-                zoom: 10,
+                zoom: 9,
                 center: {lat: 39.6766368, lng: -104.9614844}
             }
             var map = new google.maps.Map(document.getElementById('map'), options);
