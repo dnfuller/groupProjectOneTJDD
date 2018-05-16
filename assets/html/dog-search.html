@@ -31,7 +31,7 @@
 
 
         <a href="../../index.html" class="brand-logo"><img class="responsive-img" src="../images/logo.png"></a>
-        <ul class="right hide-on-med-and-down top-nav">
+        <ul class="right hide-on-med-and-down top-nav" id="headerBtns">
           <li><a class="navLinks" href="create.html">Sign Up</a></li>
           <li><a class="navLinks" href="login.html">Log In</a></li>
         </ul>
@@ -92,17 +92,17 @@
       </div>
 
       <div class=" col s7 offset-s2">
-        <div class="card brown lighten-3" >
+        <div class="card brown lighten-3 center-card" >
           <div class="card-content white-text">
             
-              <div class="nav-wrapper brown lighten-1">
+              <div class="nav-wrapper brown lighten-1 clearfix">
                 <ul id="nav-mobile" class="right">
                   <form>
                     <div class="input-field col s2">
                       <input type="text" name="location" placeholder="Location" id="userLoc">
                     </div>
                     <div class="range-field col s2">
-                      <input type="range" id="test5" min="0" max="50" />
+                      <input type="range" id="rangeSlide" min="0" max="70" />
                     </div>
                     <div class="col s1"></div>
                     <div class="input-field col s1">
@@ -126,7 +126,7 @@
                     </div>
                     <div class="col s1"></div>
                     <div class="col s1 push-s1">
-                      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                      <button class="btn waves-effect waves-light" type="submit" name="action" id="dogSearchBtn">Submit
                         <i class="material-icons right">send</i>
                       </button>
                     </div>
@@ -134,13 +134,15 @@
                   </form>
                 </ul>
               </div>
-            </nav>
+            <div class = "container" id="dogArea">
+              
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
+  <!-- </div>
+  </div> -->
 
   <!--footer-->
   <footer class="page-footer brown lighten-2">

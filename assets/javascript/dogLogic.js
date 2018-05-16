@@ -21,10 +21,12 @@ database.ref('/dogs').on('child_added', snapshot => {
 
 $("body").on('click', "#dogSearchBtn", event => {
     event.preventDefault();
+    $("#dogArea").empty();
     var range = $("#rangeSlide").val();
     // var userLoc = $("#userLoc").val().trim();
     var userLoc = "2199 S University Blvd, Denver, CO 80208"
     var userLat, userLng;
+    var j = 0;
     console.log("pushed");
     axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params:{
@@ -49,15 +51,20 @@ $("body").on('click', "#dogSearchBtn", event => {
             console.log(distance)
             if(distance < range){
                 var dogArea = $("#dogArea")
-                var dogCol = $("<div>").addClass("col l4")
-                var dogCard = $("<div>").addClass("card dogCard")
-                var dogImage = $("<div>").addClass("card-image").html("<image src='" + dogArray[i].url + "' alt='dog image' /> <span class='card-title'>" + dogArray[i].dogName + "</span>");
+                var dogCol = $("<div>").addClass("col l6")
+                var dogCard = $("<div>").addClass("card dogCard").attr("data-id", dogArray[i].ownerId).attr("data-index", i);
+                var dogImage = $("<div>").addClass("card-image").html("<image class='dogImage' src='" + dogArray[i].url + "' alt='dog image' /> <span class='card-title'>" + dogArray[i].dogName + "</span>");
                 var dogContent = $("<div>").addClass("card-content").text(dogArray[i].info);
-                if(i%3 == 0){
-                    var newRow = $("<div>").addClass("row").append(dogCol.append(dogCard.append(dogImage, dogContent)));
+                if(i % 2 == 0 && i != 1 || i == 0){
+                    console.log(i + " new");
+                    var newRow = $("<div>").addClass("row").attr("id", "row" + j).append(dogCol.append(dogCard.append(dogImage, dogContent)));
                     dogArea.append(newRow);
+                    j++
                 }else{
-                    dogArea.append(dogCol.append(dogCard.append(dogImage, dogContent)));
+                    console.log(i + " append");
+                    // var id = "#row" + j
+                    // console.log(id)
+                    $(newRow).append(dogCol.append(dogCard.append(dogImage, dogContent)));
                 }
             }else{
                 console.log(dogArray[i].dogName + " out of range");
@@ -69,4 +76,8 @@ $("body").on('click', "#dogSearchBtn", event => {
     // in a .then i will test if the distance between each dog is less than or equal too the range then i will
     // i will then add each dog to the page if they are in range
     
+})
+$("#dogArea").on("click", ".dogCard", function(){
+    var ownerId = $(this).attr("data-id")
+
 })
