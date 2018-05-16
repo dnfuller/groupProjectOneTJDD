@@ -115,7 +115,10 @@
     .dogImage {
         height:100px;
         width:100%;
-        
+    }
+    .dogPic{
+        height: 100px;
+        width: 200px;
     }
     .dogCard {
         height: 200px;
