@@ -112,11 +112,32 @@
       min-height: 550px;
     }
 
-    .card {
+    .dogImage {
+        height:100px;
+        width:100%;
+        
+    }
+    .dogCard {
+        height: 200px;
+        color:black;
+    }
+    .center-card {
       width: 100%;
       min-height: 450px;
       margin-top: 40px;
       margin-left: -175px;
+    }
+
+    .card .card-title {
+      font-size: 35px;
+    }
+
+    .input-field>label {
+      color: black;
+    }
+
+    input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+      color: black;
     }
 
     .footer-menu {
