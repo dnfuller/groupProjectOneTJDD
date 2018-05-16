@@ -77,7 +77,44 @@ $("body").on('click', "#dogSearchBtn", event => {
     // i will then add each dog to the page if they are in range
     
 })
+function addRow(appnd){
+    newRow=$("<div>");
+    newRow.addClass("row");
+    appnd.append(newRow);
+    return newRow;
+}
+function addCol(lg, md, sm, rowName){
+    newCol=$("<div>");
+    newCol.addClass("col l" + lg + " m " + md + " s " + sm);
+    rowName.append(newCol);
+    return newCol;
+}
 $("#dogArea").on("click", ".dogCard", function(){
-    var ownerId = $(this).attr("data-id")
+    var ownerId = $(this).attr("data-id");
+    var dogIndex = $(this).attr("data-index");
+    database.ref("users/" + ownerId).once('value').then(snapshot => {
+        $("#dogArea").empty();
+        var contactArea = $("<div>").addClass("row");
+        var dogDiv = $("<div>").addClass("col l4 m4 s4");
+        var dogPicRow = addRow(dogDiv);
+        var dogPicCol = addCol(12, 12, 12, dogPicRow);
+        var dogPic = $("<img>").attr("src", dogArray[dogIndex].url).addClass("dogPic")
+        dogPicCol.append(dogPic);
+        var dogNameRow = addRow(dogDiv);
+        var dogNameCol = addCol(12, 12, 12, dogNameRow);
+        var dogName = $("<h2>").text(dogArray[dogIndex].dogName);
+        dogNameCol.append(dogName);
+        var contentDiv = addCol(8, 8, 8, contactArea);
+        var nameRow = addRow(contentDiv);
+        var nameCol = addCol(12, 12, 12, nameRow);
+        var nameH = $("<h2>").text(snapshot.val().name);
+        nameCol.append(nameH);
+        var emailRow = addRow(contentDiv);
+        var emailCol = addCol(12, 12, 12, emailRow);
+        var emailP = $("<p>").text(snapshot.val().email);
+        emailCol.append(emailP);
+        contactArea.append(dogDiv, contentDiv);
+        $("#dogArea").append(contactArea);
+    })
 
 })

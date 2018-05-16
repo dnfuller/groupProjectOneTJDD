@@ -114,15 +114,15 @@ auth.onAuthStateChanged(user => {
 });
 $(document).ready(function(){
     (() => {
-        // console.log("inboy");
-        // if(isLoggedIn){
-        //     console.log("hi");
-        //     $("#headerBtns").html("<button class='waves-effect waves-light btn' id='logout'>Log Out</button>");
-        //     console.log(currentUserID);
-        //     console.log("hi");
-        // }else{
-        //     $("#headerBtns").html("<li><a class=\"navLinks\" href=\"assets/html/create.html\">Sign Up</a></li><li><a class=\"navLinks\" href=\"assets/html/login.html\">Log In</a></li>");
-        // }
+        console.log("inboy");
+        if(isLoggedIn){
+            console.log("hi");
+            $("#headerBtns").html("<button class='waves-effect waves-light btn' id='logout'>Log Out</button>");
+            console.log(currentUserID);
+            console.log("hi");
+        }else{
+            $("#headerBtns").html("<li><a class=\"navLinks\" href=\"assets/html/create.html\">Sign Up</a></li><li><a class=\"navLinks\" href=\"assets/html/login.html\">Log In</a></li>");
+        }
     })();
 })
 
