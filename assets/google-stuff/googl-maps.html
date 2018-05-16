@@ -11,27 +11,27 @@
    <h1>My google Map</h1>
    <div id = 'map'></div>
    <script>
-     function initMap() {
+      function initMap() {
        var options = {
          zoom: 8,
          center: {lat: 39.7392, lng: -104.9903}
        }
        var map = new google.maps.Map(document.getElementById('map'), options);
        
-       // var image = 'groupProjectOneTJDD/assets/images/favicon/paw32x32.png';
-     //   var marker = new google.maps.Marker({
-     //     position: {lat: 39.6766, lng: -104.9619},
-     //     map:map,
-     //     icon: image
-     //   });
-       
-     //   var infoWindow = new google.maps.InfoWindow({
-     //     content: '<h1>Denver University</h1>'
-     //   });
+          // var image = 'groupProjectOneTJDD/assets/images/favicon/paw32x32.png';
+        //   var marker = new google.maps.Marker({
+        //     position: {lat: 39.6766, lng: -104.9619},
+        //     map:map,
+        //     icon: image
+        //   });
+          
+        //   var infoWindow = new google.maps.InfoWindow({
+        //     content: '<h1>Denver University</h1>'
+        //   });
 
-     //   marker.addListener('click', function() {
-     //     infoWindow.open(map, marker);
-     //   });
+        //   marker.addListener('click', function() {
+        //     infoWindow.open(map, marker);
+        //   });
    
      //add markerfunction
      function addMarker(lt, lg) {
@@ -46,8 +46,9 @@
     }
 
    </script>
+   
    <!-- api activation -->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc&callback=initMap"
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnL1mPa-gaSVkuqeE8FquM521QqlV6yfc&callback=initMap&libraries=geometry"
    async defer></script>
  </body>
 </html>
